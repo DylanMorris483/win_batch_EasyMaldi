@@ -3,7 +3,7 @@ EasyMaldi enables laboratory-internal-indentifier (LII) based access and retriev
 
 The goal for this software was fourfold: (i) No installation required on a windows machine, (ii) no human interaction required, (iii) data is organized according to LIIs minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
 ## Table of contents
-- [Description](## Citation)
+- [Description](##Citation)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
