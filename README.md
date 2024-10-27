@@ -1,7 +1,7 @@
 # EasyMaldi
-EasyMaldi enables laboratory-internal-indentifier (LII) based access and retrieval of spectral data of Burker Biotyper® systems on computers with no installation permissions and therefore is tailored for the usage in clinical laboratories. 
+EasyMaldi streamlines spectral data extraction and diagnostic integration from Bruker Biotyper® Maldi-Tof MS Systems. 
 
-The goal for this software was fourfold: (i) No installation required on a windows machine, (ii) no human interaction required, (iii) data is organized according to LIIs minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
+The goal for this software was threefold: (i) No installation required on a windows machine (often the case within the clinical laboratory setting), (ii) no human interaction required, (iii) data is organized according to LIIs minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
 ## Table of contents
 - [Citation](#Citation)
 - [Version](#Version)
@@ -42,6 +42,6 @@ To circumvent this issue, we present our software EasyMaldi, a simple, zero-inst
 
 
 ## Instructions
-
+EasyMaldi consists of two modules: (i) EasyMaldiArchive and (ii) EasyMaldiExtraction. EasyMaldiArchive gathers spectral data that was created between its last execution timepoint and yesterday. It then re-organises the data and adds it to the spectra archive. The second module, EasyMaldiExtract acts as a filter for the data and extracts spectra from the archive in bulk using user-provided LII’s.
 
 
