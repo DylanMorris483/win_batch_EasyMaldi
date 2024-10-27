@@ -2,6 +2,8 @@
 EasyMaldi enables laboratory-internal-indentifier (LII) based access and retrieval of spectral data of Burker Biotyper® systems on computers with no installation permissions and therefore is tailored for the usage in clinical laboratories. 
 
 The goal for this software was fourfold: (i) No installation required on a windows machine, (ii) no human interaction required, (iii) data is organized according to LIIs minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
+## Table of contents
+
 
 ## Citation
 To cite this work, please cite: 
@@ -17,6 +19,7 @@ Affiliation: Laboratory Medicine, University Hospital Basel, 4031 Basel, SWITZER
 
 ## Dependencies:
 jq json parser (V. 1.6): https://jqlang.github.io/jq/download/
+
 
 ## Background
 Since the early 2010s, matrix-assisted laser desorption ionization-time of flight mass spectrometry  has been broadly implemented in clinical laboratories and today is routinely used to identify the causal agent in case of bacteria or fungi. This work resulted in a vast amount of available spectral data related to patient and diagnostic data.
