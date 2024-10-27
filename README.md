@@ -41,7 +41,41 @@ Reformatting the data and directory structure such that it is organized accordin
 To circumvent this issue, we present our software EasyMaldi, a simple, zero-install and easy-to-use windows application. EasyMaldi ensures LII based access and retrieval of spectral data on computers with no installation permissions and therefore is tailored for the usage in clinical laboratories. Ultimately, EasyMaldi advances assembly of large datasets of spectral data linked to related diagnostic data which is crucial for further advancements in Maldi-Tof MS spectra based research and is ideal to provide the data in a format that is easily accessible for ML approaches. Running the software can be fully automatized and the archived data can serve as a backup of raw-data.
 
 
-## Instructions
+## Instructions:
 EasyMaldi consists of two modules: (i) EasyMaldiArchive and (ii) EasyMaldiExtraction. EasyMaldiArchive gathers spectral data that was created between its last execution timepoint and yesterday. It then re-organises the data and adds it to the spectra archive. The second module, EasyMaldiExtract acts as a filter for the data and extracts spectra from the archive in bulk using user-provided LII’s.
+
+### EasyMaldiArchive:
+EasyMaldiArchive is designed to send data from one MTCC drive to the archive. However, data from multiple MTCC’s can be integrated within a single archive by setting up a separate EasyMaldiArchive module for each MTCC which may or may not run in parallel.
+
+#### Initialisation:
+EasyMaldiArchive comprises of five batch-scripts (A_archive_maldispectra[.bat?], B_backup_to_localdrive.bat, C_create_key.bat, D_order_spectra.bat, and E_check_input.bat) which are stored in the EasyMaldi application directory. 
+Manual initialisation steps are required for setting up EasyMaldiArchive (Fig. 2). First, create a spectra-archive-directory which may be initialised on any network drive which has sufficient storage space (approximately 315 MB/1000 Spectra) and is connected to the MTCC. Within this archive, create a subdirectory 'log_files' in which a text file named 'log_your_MTCC_indentifier' must be initialised. This text file serves as a log file and is initialised by writing the date of first Maldi measurements to the file (use format 20120101 for 1. January 2012 and end with a whitespace).
+In the archive directory, also create a “data” directory and indicate its path in the definition section of “A_archive_maldispectra”.
+Additional required script modifications include the path to the MTCC data directory (line xy), the path to the jq json parser (line xy), defining a MTCC-identifier (line xy) and indicating an appropriate high-speed drive (ideally C:\) with sufficient space (approximately 315 MB/1000 Spectra) for transitory data storage. 
+
+#### Send Data to Archive:
+Transferring spectral data from the MTCC to the archive is initiated by calling 'A_archive_maldispectra.bat' along the date of yesterday as an argument (use format for 1. January 2012). Example command (When executed on December 30th, 2023:
+A_archive_maldispectra.bat 20231229
+
+A_archive_maldispectra then calls several scripts in succession to each other (E_check_input.bat, B_backup_to_localdrive.bat, C_create_key.bat and D_order_spectra.bat) 
+
+E_check_input.bat tests if the provided date of yesterday has the expected format (eight digits, fifth digit either one or zero, seventh digit either one, two, three or zero). 
+
+B_backup_to_localdrive.bat retrieves the date of last archiving (or date of first measurement during first execution) from the log file, saves the date of today there, and copies all data generated between last archiving and yesterday to the defined high-speed drive. Ensure sufficient space on this drive (~315 MB/1000 Spectra).
+
+C_create_key.bat uses the jq parser (xy) and the ‘info’ json object (fig xy) to translate Bruker AnalyteUid’s into LII’s and prints these identifiers along paths to their spectra, and years of measurement into a text file. The year of measurement is extracted from the json-object 'statusInfo.json' within the Bruker data structure (fig xy).
+
+D_order_spectra.bat uses the generated text file as a dictionary to reorganise the spectral data structure (Fig xy). The resulting structure is based on the MTCC-identifier, the year of spectra measurement, the LII, the isolate identifier and on the technical replicate number (spectra_n).
+
+A_archive_maldispectra finally sends this data structure to the Maldi archive and deletes all directories used for reorganisation on the high-speed drive.
+
+### EasyMaldiExtract:
+The EasyMaldiExtract module comprises of the script get_maldispectra.bat and uses a user-provided query text file that lists years of spectra measurements along LII’s and extracts associated spectral data from the archive (Figure xy). EasyMaldiExtract will consider data of all MTCC’s integrated within the archive.
+
+#### Create Query text file:
+The query text file defines which analyte associated spectra are to be retrieved from the archive. Each line lists one analyte and consists of the measurement year followed by its LII using a whitespace as delimeter. An example file is stored at XYZ.
+
+#### Extract Spectra
+Get_maldispectra.bat extracts spectral data using the query text file. Three script lines of the definition section must be modified before execution, including the path to the query file [this should be input when starting the file], the path to the archive [again input], and the path to the designated output directory [input]. If no file and paths are given, it uses the default input in the config.txt file. The execution of this script extracts spectra from the archive and the resulting directory structure is equivalent as in the archive (Fig. xy bottom).
 
 
