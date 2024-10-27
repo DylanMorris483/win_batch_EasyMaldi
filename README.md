@@ -10,7 +10,12 @@ The goal for this software was threefold: (i) No installation required on a wind
 - [Dependencies](#Dependencies)
 - [Background](#Background)
 - [Instructions](#Instructions)
-
+ -[EasyMaldiArchive](#EasyMaldiArchive)
+   -[Initialisation](#Initialisation)
+   -[Send Data to Archive](#Send-Data-to-Archive)
+ -[EasyMaldiExtract](#EasyMaldiExtract)
+   -[Create Query text file](#Create-Query-text-file)
+   -[Extract Spectra](#Extract-Spectra)
 ## Citation
 To cite this work, please cite: 
 
