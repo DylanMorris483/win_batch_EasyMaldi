@@ -91,3 +91,6 @@ The query text file defines which analyte associated spectra are to be retrieved
 Get_maldispectra.bat extracts spectral data using the query text file. Three script lines of the definition section must be modified before execution, including the path to the query file [this should be input when starting the file], the path to the archive [again input], and the path to the designated output directory [input]. If no file and paths are given, it uses the default input in the config.txt file. The execution of this script extracts spectra from the archive and the resulting directory structure is equivalent as in the archive (Fig. xy bottom).
 
 
+![Alt text](data_structure_6.png)
+
+
