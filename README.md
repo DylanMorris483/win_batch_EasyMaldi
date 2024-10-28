@@ -1,7 +1,7 @@
 # EasyMaldi
 EasyMaldi streamlines spectral data extraction and diagnostic integration from Bruker Biotyper® Maldi-Tof MS Systems. 
 
-The goal for this software was threefold: (i) No installation required on a windows machine (often the case within the clinical laboratory setting), (ii) no human interaction required, (iii) data is organized according to LIIs minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
+The goal for this software was threefold: (i) No installation required on a windows machine (often the case within the clinical laboratory setting), (ii) no human interaction required, (iii) data is organized according to laboratory-internal-identifiers (LII's) with minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
 ## Table of contents
 - [Citation](#Citation)
 - [Version](#Version)
