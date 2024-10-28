@@ -49,6 +49,8 @@ To circumvent this issue, we present our software EasyMaldi, a simple, zero-inst
 ## Instructions:
 EasyMaldi consists of two modules: (i) EasyMaldiArchive and (ii) EasyMaldiExtraction. EasyMaldiArchive gathers spectral data that was created between its last execution timepoint and yesterday. It then re-organises the data and adds it to the spectra archive. The second module, EasyMaldiExtract acts as a filter for the data and extracts spectra from the archive in bulk using user-provided LII’s.
 
+![Alt text](high_level_v3.png)
+
 ### EasyMaldiArchive:
 EasyMaldiArchive is designed to send data from one MTCC drive to the archive. However, data from multiple MTCC’s can be integrated within a single archive by setting up a separate EasyMaldiArchive module for each MTCC which may or may not run in parallel.
 
