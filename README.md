@@ -75,7 +75,7 @@ C_create_key.bat uses the jq parser (xy) and the ‘info’ json object (fig xy)
 D_order_spectra.bat uses the generated text file as a dictionary to reorganise the spectral data structure (Fig xy). The resulting structure is based on the MTCC-identifier, the year of spectra measurement, the LII, the isolate identifier and on the technical replicate number (spectra_n).
 
 A_archive_maldispectra finally sends this data structure to the Maldi archive and deletes all directories used for reorganisation on the high-speed drive.
-
+![Alt text](close_up_sort_3.png)
 ### EasyMaldiExtract:
 The EasyMaldiExtract module comprises of the script get_maldispectra.bat and uses a user-provided query text file that lists years of spectra measurements along LII’s and extracts associated spectral data from the archive (Figure xy). EasyMaldiExtract will consider data of all MTCC’s integrated within the archive.
 
