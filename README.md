@@ -42,8 +42,7 @@ In our clinical laboratory we use Biotyper®-Maldi-Tof MS systems by the manufac
  
 Bellow the Bruker Biotyper® directory structure for storing spectral data is depicted. Subdirectories within the main data directory (MaldiBiotyperRealtimeClassification), are each named with a unique BurkerProjectUid and refer to one measurement run. Sub-subdirectories are named with a unique Bruker AnalyteUid which refer to one target spot and contain its spectral data. Measurement time stamps and analyte metadata are stored within the 'statusInfo.json' and 'info' files.
 
-![Alt text](high_level_v3.png)
-
+![Alt text](data_structure_2_bruker.png)
 
 The Bruker directory structure can be analyzed by third party software, for example it allows for further processing using open-source software packages such as the R implemented “MALDIquant” (Daltonics, 2011; Gibb & Strimmer, 2012). Although “MALDIquant” allows for different export options, re-organizing the raw data by LII’s instead of the MALDI-Tof MS’s unique-identifier is to our knowledge currently not possible. Surprisingly, bulk retrieval methods performing this simple task seem not to exists as the manufacturer was unable to provide one readily on request.
 Reformatting the data and directory structure such that it is organized according to LII’s is further complicated by limited user access to the machine. For example  hospital, clinical laboratory or manufacturer regulations due to cyber security and data safety concerns may limit the ability to install software on MTCC . 
