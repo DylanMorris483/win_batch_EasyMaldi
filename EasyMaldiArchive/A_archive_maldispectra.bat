@@ -1,4 +1,4 @@
-REM This batch file ("A_archive_maldispectra.bat") archives Maldi spectras as described in the paper paper xy.
+REM This batch file ("A_archive_maldispectra.bat") archives Maldi spectras as described at https://github.com/DylanMorris483/win_batch_EasyMaldi.git.
 
 REM Instructions:
 REM 1.) Define paths and identifiers in the "Definition Section" below. ä', 'ö','ü or other special characters are not allowed inside the paths!
