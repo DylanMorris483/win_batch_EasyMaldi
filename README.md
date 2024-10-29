@@ -64,7 +64,7 @@ EasyMaldiArchive is designed to send data from one MTCC drive to the archive. Ho
 EasyMaldiArchive comprises of five batch-scripts (A_archive_maldispectra.bat, B_backup_to_localdrive.bat, C_create_key.bat, D_order_spectra.bat, and E_check_input.bat) which are stored in the EasyMaldi application directory. 
 Manual initialisation steps are required for setting up EasyMaldiArchive. First, create a spectra-archive-directory which may be initialised on any network drive which has sufficient storage space (approximately 315 MB/1000 Spectra) and is connected to the MTCC. Within this archive, create a subdirectory 'log_files' in which a text file named 'log_your_MTCC_indentifier' must be initialised. This text file serves as a log file and is initialised by writing the date of first Maldi measurements to the file (use format 20120101 for 1. January 2012 and end with a whitespace).
 In the archive directory, also create a “data” directory and indicate its path in the definition section of “A_archive_maldispectra”.
-Additional required script modifications include the path to the MTCC data directory (line xy), the path to the jq json parser (line xy), defining a MTCC-identifier (line xy) and indicating an appropriate high-speed drive (ideally C:\) with sufficient space (approximately 315 MB/1000 Spectra) for transitory data storage. 
+Additional required script modifications include the path to the MTCC data directory, the path to the jq json parser, defining a MTCC-identifier and indicating an appropriate high-speed drive (ideally C:\) with sufficient space (approximately 315 MB/1000 Spectra) for transitory data storage. 
 
 #### Send Data to Archive:
 Transferring spectral data from the MTCC to the archive is initiated by calling 'A_archive_maldispectra.bat' along the date of yesterday as an argument (use format for 1. January 2012). Example command (When executed on December 30th, 2023:
@@ -90,7 +90,7 @@ A_archive_maldispectra finally sends this data structure to the Maldi archive an
 The EasyMaldiExtract module comprises of the script get_maldispectra.bat and uses a user-provided query text file that lists years of spectra measurements along LII’s and extracts associated spectral data from the archive. EasyMaldiExtract will consider data of all MTCC’s integrated within the archive.
 
 #### Create Query text file:
-The query text file defines which analyte associated spectra are to be retrieved from the archive. Each line lists one analyte and consists of the measurement year followed by its LII using a whitespace as delimeter. An example file is stored at XYZ.
+The query text file defines which analyte associated spectra are to be retrieved from the archive. Each line lists one analyte and consists of the measurement year followed by its LII using a whitespace as delimeter. An example file is stored at [EasyMaldiExtraction](https://github.com/DylanMorris483/win_batch_EasyMaldi/blob/main/EasyMaldiExtraction/example_query).
 
 #### Extract Spectra
 Get_maldispectra.bat extracts spectral data using the query text file. Three script lines of the definition section must be modified before execution, including the path to the query file, the path to the archive, and the path to the designated output directory. If no file and paths are given, it uses the default input in the config.txt file. The execution of this script extracts spectra from the archive and the resulting directory structure is depicted bellow.
