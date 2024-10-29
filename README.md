@@ -3,8 +3,6 @@ EasyMaldi streamlines spectral data extraction and diagnostic integration from B
 
 The goal for this software was threefold: (i) No installation required on a windows machine (often the case within the clinical laboratory setting), (ii) no human interaction required, (iii) data is organized according to laboratory-internal-identifiers (LII's) with minimal impact on performance of the system. Runtime considerations were not made, since the software is expected to run when the machine is idle.
 
-[![DOI](https://zenodo.org/badge/DOI/10.1234/zenodo.1234567.svg)](https://doi.org/10.1234/zenodo.1234567)
-
 ## Table of contents
 - [Citation](#Citation)
 - [Version](#Version)
