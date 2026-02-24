@@ -18,7 +18,7 @@ The goal for this software was threefold: (i) No installation required on a wind
     - [Create Query Text File](#create-query-text-file)
     - [Extract Spectra](#extract-spectra)
 ## Citation
-To cite this work, please cite: 
+To cite this work, please cite: Winterflood DM, Seguí-Crespi G, Peeters C, Lang C, Ivan B, Keller PM, Schlaepfer P, Moore ERB, Vandamme P, Goldenberger D.0.Whole-genome sequence analyses reveal cryptic species-level diversity among clinical Actinotignum isolates misidentified by matrix-assisted laser desorption/ionization time-of-flight mass spectrometry. Microbiol Spectr0:e02190-25.https://doi.org/10.1128/spectrum.02190-25
 
 ## Version
 1.0
